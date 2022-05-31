@@ -22,7 +22,7 @@ def main():
     command_list = ""
     
     try:
-	    opts, args = getopt.getopt(argv, "f:c:")
+        opts, args = getopt.getopt(argv, "f:c:")
         if not opts:
             print("No options supplied")
             usage()
@@ -36,16 +36,16 @@ def main():
         # ref: https://docs.python.org/3/library/sys.html
         sys.exit(2) 
 
-	for opt, arg in opts:
-		if opt in ['-f']:
-			file_name = arg
+    for opt, arg in opts:
+        if opt in ['-f']:
+            file_name = arg
             # open the file in read mode:
             # ref: https://docs.python.org/3/tutorial/inputoutput.html
             with open(file_name, 'r', encoding="utf-8") as file:
                 # read all lines at once
                 command_list = file.read()
-		elif opt in ['-c']:
-			command_list = arg            
+        elif opt in ['-c']:
+            command_list = arg            
         else:
             #ref: https://docs.python.org/3/library/getopt.html
             print("Unhandled option" )
