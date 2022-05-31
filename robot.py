@@ -13,8 +13,8 @@ import sys,getopt
 from command import parse_commands
 
 def usage():
-    print("Usage: "+sys.argv[0]+ "-f <file_name> \nOR\nUsage: "+\
-    sys.argv[0]+ "-c <commands>")    
+    print("Usage: "+sys.argv[0]+ " -f <file_name> \nOR\nUsage: "+\
+    sys.argv[0]+ " -c <commands>")    
     
 def main():
     argv = sys.argv[1:]   
@@ -24,12 +24,12 @@ def main():
     try:
         opts, args = getopt.getopt(argv, "f:c:")
         if not opts:
-            print("No options supplied")
+            print("ERROR!! No options supplied")
             usage()
     except getopt.GetoptError as err:
         # print help information and exit 
         # ref: #https://docs.python.org/3/library/getopt.html
-        print(err)
+        print("ERROR!! ",err)
         usage()
         # Unix programs use 2 for command line syntax errors 
         # and 1 for all other kind of errors 
@@ -46,11 +46,11 @@ def main():
                 command_list = file.read()
         elif opt in ['-c']:
             command_list = arg            
-        else:
+        """else:
             #ref: https://docs.python.org/3/library/getopt.html
             print("Unhandled option" )
             usage()
-            sys.exit(2) 
+            sys.exit(2)"""
  
     # parse the list of commands
     parse_commands(command_list)
