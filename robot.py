@@ -47,12 +47,7 @@ def main():
                 # read all lines at once
                 command_list = file.read()
         elif opt in ['-c']:
-            command_list = arg            
-        """else:
-            #ref: https://docs.python.org/3/library/getopt.html
-            print("Unhandled option" )
-            usage()
-            sys.exit(2)"""
+            command_list = arg
  
     # parse the list of commands
     parse_commands(command_list)
