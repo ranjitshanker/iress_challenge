@@ -75,19 +75,3 @@ def parse_commands(command_list):
             # Check if the commands between PLACE & REPORT are valid
             cmd_between = each_set.split(end_cmd)[0]
             check_command(cmd_between)
-            """cmd_valid = check_command(cmd_between)
-            if cmd_valid:
-                # Concat PLACE and REPORT to start and end of command set          
-                final_command = start_cmd+cmd_between+end_cmd
-                #print("final_command=",final_command)
-                new_command_list.append(final_command)
-            #else:
-            #    print("Ignoring command ", start_cmd+cmd_between+end_cmd)
-                #sub_cmd_list[1:] = [x for x in sub_cmd_list[1:] if x.lower() in config.options('Commands')]   
-    print("New command:",new_command_list)
-    print("config.sections()=",config.sections())
-    print("config.options('Position')=",config.options('Position'))
-    print("Commands")
-    for command in config['Commands']:
-        print(command)
-    print("Max x=",config['Location']['Xmax'])"""
