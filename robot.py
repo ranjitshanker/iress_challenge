@@ -41,11 +41,16 @@ def main():
     for opt, arg in opts:
         if opt in ['-f']:
             file_name = arg
-            # open the file in read mode:
-            # ref: https://docs.python.org/3/tutorial/inputoutput.html
-            with open(file_name, 'r', encoding="utf-8") as file:
-                # read all lines at once
-                command_list = file.read()
+            try:
+                # open the file in read mode:
+                # ref: https://docs.python.org/3/tutorial/inputoutput.html
+                with open(file_name, 'r', encoding="utf-8") as file:
+                    # read all lines at once
+                    command_list = file.read()
+            except IOError:
+                print("ERROR!!Check the file")
+                sys.exit(2) 
+        
         elif opt in ['-c']:
             command_list = arg
  
