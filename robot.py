@@ -7,7 +7,7 @@
 # Author: Ranjit
 ##############################################################################
 """
-Main file that accepts command line arguments and call the function to parse them
+Main file that accepts command line arguments
 """
 import sys,getopt
 from command import parse_commands
@@ -39,10 +39,7 @@ def main():
 	for opt, arg in opts:
 		if opt in ['-f']:
 			file_name = arg
-            # open the file in read mode
-            #  good practice to use the with keyword when dealing with file objects. 
-            # ADV: file is properly closed, even if an exception is raised. 
-            # Using with is also much shorter than writing equivalent try-finally blocks:
+            # open the file in read mode:
             # ref: https://docs.python.org/3/tutorial/inputoutput.html
             with open(file_name, 'r', encoding="utf-8") as file:
                 # read all lines at once
