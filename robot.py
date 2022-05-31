@@ -8,6 +8,8 @@
 ##############################################################################
 """
 Main file that accepts command line arguments
+1. Input can be from a file, or from standard input.
+2. Application should handle error states appropriately and be robust to user input
 """
 import sys,getopt
 from command import parse_commands
