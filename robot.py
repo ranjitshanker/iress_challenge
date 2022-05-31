@@ -16,7 +16,7 @@ from command import parse_commands
 
 def usage():
     print("Usage: "+sys.argv[0]+ " -f <file_name> \nOR\nUsage: "+\
-    sys.argv[0]+ " -c <commands>")    
+    sys.argv[0]+ " -c '<commands>'")    
     
 def main():
     argv = sys.argv[1:]   
