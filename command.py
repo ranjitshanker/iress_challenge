@@ -28,8 +28,8 @@ config = configparser.ConfigParser(allow_no_value=True)
 config.read('config.ini')
 
 # fetch opening and ending tags of each command set
-start_cmd=config['Constraints']['Start_command'].upper()  #PLACE
-end_cmd=config['Constraints']['Stop_command'].upper()   # REPORT
+start_cmd=config['Constraints']['Start_command'].lower() #PLACE
+end_cmd=config['Constraints']['Stop_command'].lower()   #REPORT
     
 def check_command(command):
     # this function receives a set of commands between PLACE and REPORT

@@ -35,7 +35,7 @@ def check_table_limits(x,y):
 class Robot():
     def __init__(self,full_command,x,y,position,exec_command): 
         # constructor to initialise variables
-        self.full_command = full_command
+        self.full_command = [x.upper() for x in full_command]
         self.x = x
         self.y = y
         self.position = position

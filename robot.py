@@ -45,7 +45,7 @@ def main():
                 command_list = '\n'.join([command_list,line])
  
     # parse the list of commands
-    parse_commands(command_list)
+    parse_commands(command_list.lower())
         
 if __name__ == '__main__':
     main()
