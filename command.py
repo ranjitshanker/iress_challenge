@@ -56,19 +56,17 @@ def check_command(command):
         # Concat REPORT to end of command set  
         sub_cmd_list.append(end_cmd) 
         #print(sub_cmd_list)       
-        # Pass full_command, coordinates, and commands between PLACE & REPORT to the Robot
-        len_cmd = len(sub_cmd_list[1:]) 
+        # Pass full_command_set, coordinates, and set of commands after PLACE, to the Robot
         robot = Robot(sub_cmd_list,check_place[0],check_place[1],\
-        check_place[2].lower(),[x.lower() for x in sub_cmd_list[1:len_cmd]])
+        check_place[2].lower(),[x.lower() for x in sub_cmd_list[1:]])
         robot.print_cmd()
     else:
-        print("INPUT =",[start_cmd+command+end_cmd],". OUTPUT = Error! Illegal command")
+        # commands outside the scope
+        print("Input: ",[start_cmd+command+end_cmd],". Output: Error! Illegal command")
     
 def parse_commands(command_list):
     new_command_list=[]   
     cmd_valid = False
-    
-    print("Input commands:",command_list)
     # Fetch the commands between PLACE (start_cmd) & REPORT (end_cmd)
     # To do this, first split the entire command list at PLACEs
     split_at_place=command_list.split(start_cmd)
@@ -77,6 +75,6 @@ def parse_commands(command_list):
         # Then split each of the command at REPORT.
         if end_cmd in each_set:  
             # We now fetched commands BETWEEN PLACE & REPORT
-            # Check if the commands between PLACE & REPORT are valid
+            # Check if these commands are valid
             cmd_between = each_set.split(end_cmd)[0]
             check_command(cmd_between)
