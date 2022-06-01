@@ -36,8 +36,8 @@ def main():
     else:
         print("Enter commands line by line , type exit to quit")
         while True:          
-            # without strip(), if you type "quit", line will actually be "quit\n", 
-            # because readlines does not strip newlines.
+            # rstrip() required because readlines does not strip newlines 
+            # e.g.: If you type "exit", line will actually be "exit\n",
             line = sys.stdin.readline().rstrip('\n')
             if line.lower() == 'exit':
                 break
