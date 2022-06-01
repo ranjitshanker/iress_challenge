@@ -11,6 +11,7 @@ Parse the  list of commands and apply the below constraints.
 1. The first command to the robot must be a PLACE command.
 2. Discard all commands in the sequence until a valid PLACE command has been executed.
 3. A robot that is not on the table can ignore MOVE, LEFT, RIGHT and REPORT commands.
+4. Initial placement of the toy robot should not cause the robot to fall off the table 
 """
 try:
     import configparser
@@ -18,7 +19,7 @@ except ImportError:
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'configparser'])
 finally:
     import configparser
-    
+import re    
 from movement import Robot
 
 # To prevent ParsingError, set allow_no_value=True
@@ -54,8 +55,7 @@ def check_command(command):
         # To ignore any typo mistakes by user in MOVE,LEFT or RIGHT, uncomment below
         #sub_cmd_list[1:] = [x for x in sub_cmd_list[1:] if x.lower() in config.options('Commands')]   
         # Concat REPORT to end of command set  
-        sub_cmd_list.append(end_cmd) 
-        #print(sub_cmd_list)       
+        sub_cmd_list.append(end_cmd)  
         # Pass full_command_set, coordinates, and set of commands after PLACE, to the Robot
         robot = Robot(sub_cmd_list,check_place[0],check_place[1],\
         check_place[2].lower(),[x.lower() for x in sub_cmd_list[1:]])
@@ -67,6 +67,8 @@ def check_command(command):
 def parse_commands(command_list):
     new_command_list=[]   
     cmd_valid = False
+    # Users can input commands with or without quotes. Remove all single & double for uniformity.
+    command_list= re.sub("[\"\']", "", command_list)
     # Fetch the commands between PLACE (start_cmd) & REPORT (end_cmd)
     # To do this, first split the entire command list at PLACEs
     split_at_place=command_list.split(start_cmd)
