@@ -33,7 +33,7 @@ def main():
         # ref: #https://docs.python.org/3/library/getopt.html
         print("ERROR!! ",err)
         usage()
-        # Unix programs use 2 for command line syntax errors 
+        # Unix programs use exit(2) for command line syntax errors 
         # and 1 for all other kind of errors 
         # ref: https://docs.python.org/3/library/sys.html
         sys.exit(2) 
