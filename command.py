@@ -80,7 +80,7 @@ def parse_commands(command_list):
             split_at_place=command_list.split(start_cmd)
             # fetch each of the command set
             for each_set in split_at_place:
-            # Then split each of the command at REPORT.
+                # Then split each of the command at REPORT.
                 if end_cmd in each_set:  
                     # We now fetched commands BETWEEN PLACE & REPORT
                     # Check if these commands are valid
