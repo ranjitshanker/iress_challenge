@@ -1,5 +1,5 @@
 # Toy Robot Code Challenge
-*Writen by Ranjit S*
+*Written by Ranjit S*
 
 -------------------------
 Challenge
