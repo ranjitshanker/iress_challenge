@@ -43,7 +43,7 @@ directions.txt |  An example file containing valid commands.
 \test_files\junk.txt |  A test file in 'test_files' folder, that contains invalid commands.
 \test_files\directions.txt | A test file in 'test_files' folder, that contains valid commands.
 -------------------------
-Unit test cases
+Testing
 -------------------------
 Function | Description
 --- | ---
@@ -67,6 +67,14 @@ test_valid_no_file_17 | valid commands from file
 test_valid_empty_file_18 | empty file 
 test_valid_junk_file_19 | invalid commands from file 
 test_boundary_20 | test boundary cases
+```
+python test.py
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 0.007s
+
+OK
+```
 -------------------------
 Features
 -------------------------
