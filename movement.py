@@ -27,6 +27,8 @@ step_size=int(config['Constraints']['Step_size'])
 def check_table_limits(x,y):
     # check if robot's movements are within boundaries
     within_limits = False
+    # here int() is required because x and y comes from move() where they are int
+    # because addition operation had to be performed on them
     if int(config['Constraints']['Xmin']) <= x <= int(config['Constraints']['Xmax']) and \
     int(config['Constraints']['Ymin']) <= y <= int(config['Constraints']['Ymax']):
         within_limits = True
@@ -89,13 +91,15 @@ class Robot():
     def print_cmd(self):
         for cmd in self.exec_command:
             if cmd == 'move':
+                # send x and y as integers, to do addition
                 new_x,new_y=self.move(int(self.x),int(self.y),self.position)
                 self.x = new_x
                 self.y = new_y
             elif cmd == 'left' or cmd == 'right':
                 new_position = self.turn(cmd, self.position)
                 self.position = new_position
-            else:
-                print("Input: ",self.full_command,". Output: ",str(self.x)+', '+str(self.y)+', '+self.position.upper())
+            else: # REPORT
+                final_position = "Output: "+str(self.x)+', '+str(self.y)+', '+self.position.upper()
+                return final_position
 
 
