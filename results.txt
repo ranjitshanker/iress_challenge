@@ -1,0 +1,71 @@
+Results of Test cases for Standard input. 
+Note: To execute in standard input mode, run "python robot.py" from the iress_challenge folder.
+Note: In the below output, console output are preceded by a '>' symbol
+--------------------------------------------------------------------------------
+1) Scenario: Robots initially outside table
+> Enter commands line by line , type exit to quit
+PLACE 1,6, NORTH
+REPORT
+PLACE 5,5, SOUTH
+REPORT
+> Output: 5, 5, SOUTH
+PLACE 6,1, EAST
+REPORT
+> Output: 5, 5, SOUTH
+place 6, 1, east
+report
+> Output: 5, 5, SOUTH
+exit
+> Exiting the program
+--------------------------------------------------------------------------------
+2) Scenario: Multiple PLACE commands
+> Enter commands line by line , type exit to quit
+place 3,2, north
+report
+> Output: 3, 2, NORTH
+place 4,4, west
+report
+> Output: 4, 4, WEST
+exit
+> Exiting the program
+--------------------------------------------------------------------------------
+3) Scenario: Ignore commands before valid PLACE command
+> Enter commands line by line , type exit to quit
+left
+left
+move
+report
+place 2,5, east
+left
+report
+> Output: 2, 5, NORTH
+exit
+> Exiting the program
+--------------------------------------------------------------------------------
+4) Scenario: Preventing a fall from the table
+> Enter commands line by line , type exit to quit
+place 5,1,north
+right
+move
+report
+> Output: 5, 1, EAST
+move
+report
+Output: 5, 1, EAST
+exit
+> Exiting the program
+--------------------------------------------------------------------------------
+5) Scenario: Report displays only if Robot is on the table
+> Enter commands line by line , type exit to quit
+place 3,4,MORE
+report
+place 3,5,east
+report
+> Output: 3, 5, EAST
+exit
+> Exiting the program
+--------------------------------------------------------------------------------
+6) Scenario: User enters exit to quit from the application.
+> Enter commands line by line , type exit to quit
+exit
+> Exiting the program
