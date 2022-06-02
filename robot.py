@@ -83,10 +83,10 @@ def main():
                             last_stable_position = line.lower()
                             command_list = last_stable_position
                         else:
-                             # IF the robot is out of table, save the last stable to the command list
+                            # IF the robot is out of table, save the last stable to the command list
                             command_list = last_stable_position
                     else:
-                         # This is an invalid PLACE command. eg: PLACE with 4 parameters
+                        # This is an invalid PLACE command. eg: PLACE with 4 parameters
                         command_list = ""
                 elif  line.lower() == end_cmd :
                     # if user entered REPORT, check  if   PLACE has already been entered.
