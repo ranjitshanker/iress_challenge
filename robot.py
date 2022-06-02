@@ -16,6 +16,8 @@ Main file that accepts command line arguments
      LEFT
      RIGHT
      REPORT
+Method 1: Execute the command from command line: python robot.py <file_name.txt>
+Method 2: Execute the command from command line: python robot.py 
 """
 import sys
 from command import parse_commands
@@ -23,6 +25,7 @@ from command import parse_commands
 def main():
     len_arg = len(sys.argv)
     command_list = ""
+    final_position = ""
  
     if len_arg > 1  :
         file_name = sys.argv[1]  
@@ -43,9 +46,10 @@ def main():
                 break
             else:
                 command_list = '\n'.join([command_list,line])
- 
+
     # parse the list of commands
-    parse_commands(command_list.lower())
-        
+    final_position = parse_commands(command_list.lower())
+    print(final_position)
+    
 if __name__ == '__main__':
     main()
