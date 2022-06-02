@@ -1,5 +1,5 @@
 # Toy Robot Code Challenge
-Writen by Ranjit S
+*Writen by Ranjit S*
 
 -------------------------
 Challenge
@@ -75,21 +75,22 @@ Features
 -------------------------
 Setup and Execution
 -------------------------
-Download the repository https://github.com/ranjitshanker/iress_challenge
-From the folder iress_challenge, execute the following commands:
-1. To run the challenge with file input
-$ python robot.py directions.txt
-2. To run the challenge with standard input
-$ python robot.py
-3. To run test cases
-$ python test.py
+1. Download the repository https://github.com/ranjitshanker/iress_challenge
+2. Python must be already installed in the system.
+3. From the folder iress_challenge, execute the following commands:
+
+a. To run the challenge with **file input**: `python robot.py directions.txt`
+
+b. To run the challenge with **standard input**: `python robot.py`
+
+c. To run **test cases**: `python test.py`
+
 -------------------------
 Note on running the script on standard input
 -------------------------
-As mentioned before, the user need to execute the command: python robot.py from the console.
-It will display a message: Enter commands line by line , type exit to quit.
-User can enter commands and when finally done, type exit to quit from the application.
-Whenever the user types REPORT, then the application will check if the Robot is in the table. If yes, it will show the position. Otherwise, no position is dispayed.
-Please refer results.txt for output of various commands executed through the standard input.
+1. As mentioned before, the user need to execute the command: *python robot.py* from the console. It will display a message: *Enter commands line by line , type exit to quit*.
+2. User can enter commands and when finally done, type *exit* to quit from the application.
+3. Whenever the user types *REPORT*, then the application will check if the Robot is in the table. If yes, it will show its position on the table. Otherwise, no position is dispayed.
+4. Please refer *results.txt* for output of various commands executed through the standard input.
 
 
