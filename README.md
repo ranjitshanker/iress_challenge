@@ -31,16 +31,17 @@ Files
 -------------------------
 File | Description
 --- | ---
-config.ini |  Configuration file. Defines step sizes, max and min coordinates, positions, movements 
-robot.py |  Start point for the app. Accepts inputs from file or from standard input. The commands are passed to command.py
-command.py |  check the validity of the commands (movements, coordinates and position) before passing them to movement.py
-movement.py | performs turn (left, right,north, south), move (in the direction of the turn) depending on the step_size defined in config.ini. Returns the final position when REPORT is encountered
-test.py | A test script performing 20 test cases
-results.txt | Output of commands executed through the standard input
-directions.txt |  An example file containing valid commands 
-\test_files\empty.txt |  A test file in 'test_files' folder, that contains no commands (i.e. empty file)
-\test_files\junk.txt |  A test file in 'test_files' folder, that contains invalid commands
-\test_files\directions.txt | A test file in 'test_files' folder, that contains valid commands
+README.md | The README file.
+config.ini |  Configuration file. Defines step sizes, max and min coordinates, positions, and movements.
+robot.py |  Start point for the app. Accepts inputs from file or from standard input. The commands are passed to command.py.
+command.py |  check the validity of the commands (movements, coordinates and position) before passing them to movement.py.
+movement.py | performs turn (left, right,north, south), move (in the direction of the turn) depending on the step_size defined in config.ini. Returns the final position when REPORT is encountered.
+test.py | A test script performing 20 test cases.
+results.txt | Output of commands executed through the standard input.
+directions.txt |  An example file containing valid commands.
+\test_files\empty.txt |  A test file in 'test_files' folder, that contains no commands (i.e. empty file).
+\test_files\junk.txt |  A test file in 'test_files' folder, that contains invalid commands.
+\test_files\directions.txt | A test file in 'test_files' folder, that contains valid commands.
 -------------------------
 Unit test cases
 -------------------------
