@@ -1,23 +1,27 @@
 # Toy Robot Code Challenge
 Writen by Ranjit S
 
-***
 -------------------------
 Challenge
 -------------------------
-Create a console application that can read in commands of the following form -
+Create a console application that can read in commands of the following form:
+
      PLACE X,Y,F
      MOVE
      LEFT
      RIGHT
      REPORT
-Input can be from a file, or from standard input.
+
+Input:
+1. Input can be from a file, or from standard input.
+
 Placement constraints.
 1. The first command to the robot must be a PLACE command.
 2. Discard all commands in the sequence until a valid PLACE command has been executed.
 3. A robot that is not on the table can ignore MOVE, LEFT, RIGHT and REPORT commands.
 4. Initial placement of the toy robot should not cause the robot to fall off the table 
 5. Application should handle error states appropriately and be robust to user input
+
 Movement constraints
 1. Move the toy robot one unit forward in the direction it is currently facing.
 2. Any movement that would result in the robot falling from the table must be prevented,
@@ -65,9 +69,9 @@ test_boundary_20 | test boundary cases
 -------------------------
 Features
 -------------------------
-Ignores empty input comands,
-If typo commands has to be ignored, need to uncomment 2 lines in command.py
-Use of config.ini to check for valid positions, movements and coordinates. Can be used to add more commands and constraints.
+1. Ignores empty input comands.
+2. If typo commands has to be ignored, need to uncomment 2 lines in command.py
+3. Use of config.ini to check for valid positions, movements and coordinates. Can be used to add more commands and constraints.
 -------------------------
 Setup and Execution
 -------------------------
@@ -82,8 +86,8 @@ $ python test.py
 -------------------------
 Note on running the script on standard input
 -------------------------
-As mentioned before, the user need to execute the command: python robot.py from the console
-It will display a message: Enter commands line by line , type exit to quit
+As mentioned before, the user need to execute the command: python robot.py from the console.
+It will display a message: Enter commands line by line , type exit to quit.
 User can enter commands and when finally done, type exit to quit from the application.
 Whenever the user types REPORT, then the application will check if the Robot is in the table. If yes, it will show the position. Otherwise, no position is dispayed.
 Please refer results.txt for output of various commands executed through the standard input.
