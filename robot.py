@@ -96,7 +96,11 @@ def main():
                     else:                  
                         final_position = parse_commands(command_list.lower())
                         print(final_position) 
-                        command_list = last_stable_position
+                        if final_position != "Output: Invalid command or position or coordinates":
+                            final_position = final_position.replace("Output:", "place")
+                            command_list = final_position
+                        else:
+                            command_list = last_stable_position
                     
 if __name__ == '__main__':
     main()
