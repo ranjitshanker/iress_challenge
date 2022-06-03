@@ -99,7 +99,7 @@ Note on running the script on standard input
 -------------------------
 1. As mentioned before, the user need to execute the command: *python robot.py* from the console. It will display a message: *Enter commands line by line , type exit to quit*.
 2. User can enter commands and when finally done, type *exit* to quit from the application.
-3. Whenever the user types *REPORT*, then the application will check if the Robot is in the table. If yes, it will show its position on the table. Otherwise, no position is dispayed.
+3. Whenever the user types *REPORT*, then the application will check if the Robot is on the table (i.e. a previous valid PLACE command). If yes, it will show its position on the table. Otherwise, no position is dispayed.
 4. Please refer *results.txt* for output of various commands executed through the standard input.
 
 
